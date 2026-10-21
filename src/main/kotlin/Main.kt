@@ -1,5 +1,23 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    println("Hello, world!")
+    val employees = listOf(
+        // список штатных
+        Employee("Иванов", "Иван", "Иванович", "Разработчик", "ivanov@mail.ru", "123-45-67", 150000, 40),
+        Employee("Петрова", "Мария", "Сергеевна", "Дизайнер", "petrova@mail.ru", "234-56-78", 120000, 25),
+        Employee("Сидоров", "Алексей", "Павлович", "Менеджер", "sidorov@mail.ru", "345-67-89", 130000, 45),
+        Employee("Козлова", "Елена", "Дмитриевна", "Аналитик", "kozlova@mail.ru", "456-78-90", 140000, 28),
+        Employee("Морозов", "Дмитрий", "Андреевич", "Тестировщик", "morozov@mail.ru", "567-89-01", 110000, 27),
+
+        // стажеры без зарплаты
+        Employee("Новиков", "Артём", "Олегович", "Стажёр-разработчик", "novikov@mail.ru", "678-90-12", 20),
+        Employee("Волкова", "Анна", "Викторовна", "Стажёр-дизайнер", "volkova@mail.ru", "789-01-23", 22),
+        Employee("Лебедев", "Максим", "Игоревич", "Стажёр-аналитик", "lebedev@mail.ru", "890-12-34", 21),
+        Employee("Соколова", "Виктория", "Романовна", "Стажёр-тестировщик", "sokolova@mail.ru", "901-23-45", 19),
+        Employee("Фёдоров", "Никита", "Александрович", "Стажёр-менеджер", "fedorov@mail.ru", "012-34-56", 43)
+    )
+
+    println("Список стажеров: ")
+    employees.filter { it.salary == null }.forEach { it.printBeautifully() }
+
+    println("Список сотрудников старше 30 лет: ")
+    employees.filter { it.age >= 40 }.forEach { it.printBeautifully() }
 }
